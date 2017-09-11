@@ -31,6 +31,5 @@ var pixgrid = function() {
                     centerImage(largeImage));
                 }, !1);
             }
-        }, !1);
-    }
+        }, !1);    }
 }();
