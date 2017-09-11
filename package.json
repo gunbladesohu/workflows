@@ -2,12 +2,14 @@
   "name": "workflows",
   "version": "0.0.1",
   "description": "A project to showcase workflows",
-  
-
   "repository": {
     "type": "git",
     "url": "?.git"
   },
   "author": "Mo Chen",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "3.6.2",
+    "gulp-util": "^3.0.8"
+  }
 }
