@@ -1,0 +1,113 @@
+ <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>Bootstrap</title>
+
+  <style type="text/css">
+
+    html
+    {
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after
+    {
+      box-sizing: inherit;
+    }
+
+    .container
+    {
+      font-size: 16px;
+      margin-bottom:  4px;
+    }
+
+    .container::before,.container::after
+    {
+      content: "";
+      display: table;
+    }
+    .container::after
+    {
+      clear: both;
+    }
+
+    .col
+    {
+      float: left;
+      border-style: solid;
+      border-width: 1px;
+      border-color: blue;
+    }
+    .col-1
+    {
+      width: 16.66%;
+    }
+    .col-2
+    {
+      width: 33.33%;
+    }
+    .col-3
+    {
+      width: 50%;
+    }
+    .col-4
+    {
+      width: 66.66%;
+    }
+    .col-5
+    {
+      width: 83.33%;
+    }
+    .col-6
+    {
+      width: 100%;
+    }                
+
+  </style>
+</head>
+
+
+
+<body>
+<div class="parent">
+  <div class="container">
+    <div class="col col-1">col-1</div>
+  </div>
+  <div class="container">
+    <div class="col col-2">col-2</div>
+  </div>  
+  <div class="container">
+    <div class="col col-3">col-3</div>
+  </div>
+  <div class="container">
+    <div class="col col-4">col-4</div>
+  </div>
+  <div class="container">
+    <div class="col col-5">col-5</div>
+  </div>
+  <div class="container">
+    <div class="col col-6">col-6</div>
+  </div>
+  <div class="container">
+    <div class="col col-4">col-4</div>
+    <div class="col col-2">col-2</div>
+  </div>          
+</div>
+
+
+
+
+
+  <script src="js/jquery.slim.min.js"></script>
+  <script src="js/tether.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>

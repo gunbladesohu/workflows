@@ -1,0 +1,97 @@
+ <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>Bootstrap</title>
+
+  <style type="text/css">
+
+    html
+    {
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after
+    {
+      box-sizing: inherit;
+    }
+
+    .box
+    {
+      display: inline-block;
+      margin-left: 0;
+      transition: all 2s ease-out 1s;
+      padding: 10px;
+      background-color: white;
+    }
+
+    .box:hover 
+    {
+      margin-left: 600px;
+      background: black;
+
+    }
+
+    @keyframes bounce
+    {
+      0%
+      {
+        top: 0%;
+      }
+      25%
+      {
+        top: 25%;
+      }
+      50%
+      {
+        top: 50%;
+      }
+      75%
+      {
+        top: 75%;
+      }
+      100%
+      {
+        top: 0%;
+        background: red;
+      }
+    }
+
+    .ball
+    {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background: lightblue;
+      border-radius: 50%;
+
+      animation-name: bounce;
+      animation-delay: 1s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 3;
+      animation-duration: 5s;
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <span class="box">box</span>
+  </div>
+  <div class="ball"></div>
+
+  <script src="js/jquery.slim.min.js"></script>
+  <script src="js/tether.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>Bootstrap</title>
+
+  <style type="text/css">
+    body {
+      font-weight: 100px; 
+      font-size: 1em;
+      background: grey;
+/*      margin: 0;*/
+    }
+
+    h1{
+      color:blue;
+    }
+
+    .content-wrap{
+      text-align: center;
+      padding: 0 50px 50px 50px;
+      background: lightblue;
+      border-style: solid;
+      margin: 1px 2px;
+    }
+
+    .link-block{
+      border-style: solid; 
+      max-width: 950px; 
+      margin: 0 auto;
+    }
+
+    .under-block-element{
+      padding: 0;
+      margin: 0;
+    }
+
+    .under-block-element-item{
+      padding: 0;
+      margin: 0;
+    }
+
+    .content-wrap>div>a{
+      padding: 10px;
+      background: white;
+      display: inline-block;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <p style="display: inline-block; background: purple; padding: 10px; margin-right: 100px; width: 100px">upper block element</p>
+  <p style="display: inline-block; background: purple; padding: 10px; margin-right: 100px; width: 100px">upper block element</p>
+
+  <div class="content-wrap">
+    <div class="link-block">
+      <a style=" height: 40px; width: 100px; display: block; margin: 0 auto;" href="#">inline element</a>
+      <a style=" height: 40px; width: 100px; display: block; margin: 0 auto;" href="#">inline element</a>
+      <a style=" height: 40px; width: 100px; display: block; margin: 0 auto;" href="#">inline element</a>
+    </div> <!-- link-block -->
+  </div> <!-- link-block-container -->
+  <div class="content-wrap">
+    <p style="background: yellow; height: 40px; width: 200px; border-style: solid; display: inline-block;">block elemetn</p>
+    <p style="background: yellow; height: 40px; width: 200px; border-style: solid; display: inline-block;">block elemetn</p>
+    <p style="background: yellow; height: 40px; width: 200px; border-style: solid; display: inline-block;">block elemetn</p>
+  </div> <!-- link-block-container -->
+  <div class="content-wrap">
+    <div class="under-block-element"> 
+      <p class="under-block-element-item" style="color: brown;">under block element</p>
+      <p class="under-block-element-item" style="color: brown;">under block element</p>
+      <p class="under-block-element-item" style="color: brown;">under block element</p>
+    </div><!-- under block element -->
+  </div> <!-- link-block-container -->
+
+   <div class="content-wrap">
+    <div class="under-block-element"> 
+      <a  href=# style="color: green;">inline link11111111111</a>
+      <a  href=# style="color: green;">inline link</a>
+      <a  href=# style="color: green;">inline link</a>
+    </div><!-- under block element -->
+  </div> <!-- link-block-container -->
+ 
+
+
+  <script src="js/jquery.slim.min.js"></script>
+  <script src="js/tether.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

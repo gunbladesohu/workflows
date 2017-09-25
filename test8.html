@@ -1,0 +1,97 @@
+ <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>Bootstrap</title>
+
+  <style type="text/css">
+
+    html
+    {
+      box-sizing: border-box;
+      background-color: black;
+    }
+
+    *, *::before, *::after
+    {
+      box-sizing: inherit;
+  /*    margin-bottom: 5px;*/
+    }
+    body
+    {
+      background: white;
+    }
+    .class1
+    {
+/*      display: none;*/
+      background-color: red;
+      position: relative;
+      z-index: 100;
+    }
+    .class2
+    {
+/*      display: none;*/
+      margin-top: -80px;
+      margin-left: 10px;
+      background-color: green;
+      position: relative;
+      z-index: 200;      
+    }
+    .float
+    {
+/*      display: none;*/
+      float: left;
+      background-color: yellow;
+      margin: -150px 0 0 100px;
+      position: relative;
+      z-index: 300;   
+*/    }    
+    .inline
+    {
+/*      display: none;*/
+      background-color: pink;
+    }    
+    .position
+    {
+/*      display: none;*/
+      background-color: blue;
+      position: relative;
+      left: 180px;
+      top: -165px;
+      height: 110px;
+      position: relative;
+      z-index: 400;   
+
+    }    
+
+    div
+    {
+      width: 200px;
+      height: 100px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <p>body content</p>
+  <div class="class1">class1</div>
+  <div class="class2">class2</div>
+  <div class="float">
+    <p>float</p>
+    <span class="inline">inline</span> 
+  </div>
+  <div class="position">position</div>
+
+  <script src="js/jquery.slim.min.js"></script>
+  <script src="js/tether.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>

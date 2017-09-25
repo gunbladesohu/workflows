@@ -5,6 +5,7 @@ var browserify = require('gulp-browserify');
 var compass = require('gulp-compass');
 var concat = require('gulp-concat');
 var connect = require('gulp-connect');
+var browserSync = require('browser-sync').create();
 
 var coffeeSource =['components/coffee/tagline.coffee'];
 
@@ -14,6 +15,24 @@ var jsSource=[
 'components/scripts/tagline.js',
 'components/scripts/template.js'
 ]
+
+var jsSource_old=[
+'js/bootstrap.min.js',
+'js/jquery.slim.min.js',
+'js/tether.min.js',
+'js/scripts.js'
+]
+
+var imageSource=
+'images/*.*'
+
+
+var cssSource_old=[
+'css/bootstrap.min.css'
+]
+
+var htmlSource='./*.html'
+
 
 var sassSource = ['components/sass/style.scss'];
 var sassSource_all = [
@@ -30,6 +49,18 @@ var sassSource_all = [
 // gulp.task('log', function(){
 // 	gutil.log("workflow is awesome!");
 // });
+
+
+
+// Static server
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "builds/development"
+        }
+    });
+});
+
 gulp.task('connect', function()
 	{
 		connect.server(
@@ -54,6 +85,31 @@ gulp.task('js',function(){
 	.pipe(connect.reload());
 });
 
+
+gulp.task('html',function(){
+	gulp.src(htmlSource)
+	.pipe(gulp.dest('builds/development/'))
+	.pipe(connect.reload());
+});
+
+gulp.task('images',function(){
+	gulp.src(imageSource)
+	.pipe(gulp.dest('builds/development/images'))
+	.pipe(connect.reload());
+});
+
+gulp.task('js_old',function(){
+	gulp.src(jsSource_old)
+	.pipe(gulp.dest('builds/development/js'))
+	.pipe(connect.reload());
+});
+
+gulp.task('css_old',function(){
+	gulp.src(cssSource_old)
+	.pipe(gulp.dest('builds/development/css'))
+	.pipe(connect.reload());
+});
+
 gulp.task('compass', function(){
 	gulp.src(sassSource)
 	.pipe(compass({
@@ -70,7 +126,10 @@ gulp.task('watch',function(){
 	gulp.watch(coffeeSource, ['coffee']);
 	gulp.watch(jsSource, ['js']);
 	gulp.watch(sassSource_all, ['compass']);
+	gulp.watch(htmlSource, ['html']);
+	gulp.watch(imageSource, ['images']);
+    gulp.watch(htmlSource, browserSync.reload);
 })
 
 
-gulp.task('default', ['coffee','js','compass','connect','watch']);
+gulp.task('default', ['html','browser-sync','images','css_old','js_old','coffee','js','compass','connect','watch']);

@@ -1,0 +1,165 @@
+ <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>Bootstrap</title>
+
+  <style type="text/css">
+
+    html
+    {
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after
+    {
+      box-sizing: inherit;
+  /*    margin-bottom: 5px;*/
+    }
+
+   
+
+
+
+    nav
+    {
+      background-color: purple;
+      text-align: center;
+      font-size: 0;
+      position: fixed;
+      background-color: white;
+      left: 0;
+      right: 0;
+    }
+
+
+    nav a
+    {
+      display: inline-block;
+/*      background-color: lightblue;*/
+      width: 25%;
+      font-size: 20px;
+      padding: 15px 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+/*
+    header+p
+    {
+      padding-top: 80px;
+    }
+*/
+    img
+    {
+      display: block;
+      width: 50%;
+      height: 50%;
+    }
+
+
+    img ~ p
+    {
+      width: 50px;
+      background-color: yellow;
+    }
+
+    .info
+    {
+      padding: 80px 40px;
+    }
+
+    .info>p, .info>img
+    {
+
+      margin: auto;
+    }
+
+    div p:first-of-type
+    {
+      width: 50px;
+    }
+
+    .download-container
+    {
+      background-color: #2B2D42;
+      position: relative;
+    }    
+    .btn
+    {
+      text-decoration: none;
+      background-color: #EF233C;
+      font-weight: bold;
+      padding:10px;
+      color: white;
+      display: inline-block;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+    .btn
+    {
+      text-decoration: none;
+      background-color: #EF233C;
+      font-weight: bold;
+      padding:10px;
+      color: white;
+      display: inline-block;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+    .download-img
+    {
+      border-radius: 50%; 
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+  <header> <!-- header -->
+    <nav  >
+      <a href="#about">about</a>
+      <a href="#work">work</a>
+      <a href="#education">education</a>
+      <a href="#contact">contact</a>
+    </nav>    
+  </header >
+  <header class="download-container"> <!-- header -->
+    <img  class="download-img" src="./images/carousel-lifestyle.jpg">
+    <a  href="./images/carousel-lifestyle.jpg" class="btn" download>Download PDF</a>
+  </header>
+  <p>out of div </p>
+
+  <div id="about" class="info">
+    <p>about</p>
+    <img src="./images/carousel-lifestyle.jpg">
+  </div>
+  <div id="work" class="info">
+    <p>work</p>
+    <img src="./images/carousel-exoticanimals.jpg">
+  </div>
+  <div id="education" class="info">
+    <p>education</p>
+    <img src="./images/carousel-fish.jpg">
+  </div>
+  <div id="contact" class="info">
+    <p>contact</p>
+    <img src="./images/carousel-vaccinations.jpg">
+  </div>
+
+  <script src="js/jquery.slim.min.js"></script>
+  <script src="js/tether.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>
