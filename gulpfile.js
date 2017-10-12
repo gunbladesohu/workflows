@@ -23,9 +23,8 @@ var jsSource_old=[
 'js/scripts.js'
 ]
 
-var imageSource=
-'images/*.*'
-
+var imageSource='images/**/*'
+var HP_source ='HPlusSport_Start/**/*'
 
 var cssSource_old=[
 'css/bootstrap.min.css'
@@ -33,6 +32,11 @@ var cssSource_old=[
 
 var htmlSource='./*.html'
 
+var htmlJquerySource='./jquery/**/*'
+
+var bkaSource='./JavaScript_NT/**/*'
+
+var cssSource='./*.css'
 
 var sassSource = ['components/sass/style.scss'];
 var sassSource_all = [
@@ -49,6 +53,7 @@ var sassSource_all = [
 // gulp.task('log', function(){
 // 	gutil.log("workflow is awesome!");
 // });
+
 
 
 
@@ -92,9 +97,33 @@ gulp.task('html',function(){
 	.pipe(connect.reload());
 });
 
+gulp.task('htmlJquery',function(){
+	gulp.src(htmlJquerySource)
+	.pipe(gulp.dest('builds/development/jquery/'))
+	.pipe(connect.reload());
+});
+
+gulp.task('bka',function(){
+	gulp.src(bkaSource)
+	.pipe(gulp.dest('builds/development/bka/'))
+	.pipe(connect.reload());
+});
+
+gulp.task('css',function(){
+	gulp.src(cssSource)
+	.pipe(gulp.dest('builds/development/'))
+	.pipe(connect.reload());
+});
+
 gulp.task('images',function(){
-	gulp.src(imageSource)
-	.pipe(gulp.dest('builds/development/images'))
+	gulp.src([imageSource], { "base" : "." })
+	.pipe(gulp.dest('builds/development/'))
+	.pipe(connect.reload());
+});
+
+gulp.task('hp',function(){
+	gulp.src([HP_source], { "base" : "." })
+	.pipe(gulp.dest('builds/development/'))
 	.pipe(connect.reload());
 });
 
@@ -123,13 +152,19 @@ gulp.task('compass', function(){
 });
 
 gulp.task('watch',function(){
+	gulp.watch(bkaSource, ['bka']);
 	gulp.watch(coffeeSource, ['coffee']);
 	gulp.watch(jsSource, ['js']);
 	gulp.watch(sassSource_all, ['compass']);
 	gulp.watch(htmlSource, ['html']);
+	gulp.watch(htmlJquerySource, ['htmlJquery']);
+	gulp.watch(cssSource, ['css']);
 	gulp.watch(imageSource, ['images']);
+	gulp.watch(HP_source, ['hp']);
     gulp.watch(htmlSource, browserSync.reload);
 })
 
 
-gulp.task('default', ['html','browser-sync','images','css_old','js_old','coffee','js','compass','connect','watch']);
+
+
+gulp.task('default', ['bka','hp','html','htmlJquery','css','browser-sync','images','css_old','js_old','coffee','js','compass','connect','watch']);

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>First jQuery-Enabled Page</title>
+    <link rel="stylesheet" href="../style.css" />
+
+    <!-- insert the script to reference jQuery here -->
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+
+    <!-- insert the script to display the Hello World message here -->
+    <script type="text/javascript">
+        $("document").ready(function(){$("#content").append("<p>this is the first jquery try</p>")});
+        window.addEventListener("DOMContentLoaded", function(evt) {
+            var element = document.getElementById("content");
+            var para = document.createElement("p");
+            var text = document.createTextNode("The page just loaded");
+            
+            para.appendChild(text);
+            element.appendChild(para);
+        });
+
+
+
+    </script>
+</head>
+
+<body>
+    <h1>First jQuery Page</h1>
+    <div id="content">
+        <!-- we start with an empty document -->
+    </div>
+</body>
+
+
+</html>

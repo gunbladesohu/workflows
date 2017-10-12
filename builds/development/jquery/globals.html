@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Using AJAX Global Events</title>
+    <style>
+        #ajaxContent {
+            padding: 5pt;
+            border: 2px dashed lightgray;
+        }
+    </style>
+    <link rel="stylesheet" href="../style.css" />
+
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(document).ajaxComplete(funAjaxComplete);
+            $(document).ajaxError(funAjaxError);
+            $(document).ajaxSend(funAjaxSend);
+            $(document).ajaxStart(funAjaxStart);
+            $(document).ajaxStop(funAjaxStop);
+            $(document).ajaxSuccess(funAjaxSuccess);
+            getData();
+        });
+
+        function funAjaxComplete(evt,xmlReq,ajaxOtions)
+        {
+            console.log("ajax completed");
+            return;  
+        }
+
+
+        function funAjaxError(evt, jqxhr, ajxSettings, error)
+        {
+            console.log("ajax found errors");
+            return;  
+        }
+
+
+        function funAjaxSend(evt, jqxhr, otion)
+        {
+            console.log("ajax about to send");
+            return; 
+        }
+
+        function funAjaxStop(handler)
+        {
+            console.log("ajax about to stop");
+            return;
+        }
+
+        function funAjaxSuccess(evt,xmlReq, otion)
+        {
+            console.log("ajax request successed");
+            return;
+        }
+
+
+        function funAjaxStart(handler)
+        {
+            console.log("ajax about to start");
+            return; 
+        }
+
+
+        function getData() {
+            $.get("textdata.txt", successFn);
+        }
+
+        function successFn(result) {
+            console.log("Setting result");
+            $("#ajaxContent").append(result);
+        }
+        function errorFn(xhr, status, strErr) {
+            alert(strErr);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Using AJAX Global Events</h1>
+    <div id="content">
+        <p id="ajaxContent"></p>
+    </div>
+</body>
+
+</html>
